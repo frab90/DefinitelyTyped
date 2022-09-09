@@ -23,7 +23,7 @@ function hljsHighlighter(): JSX.Element {
     SyntaxHighlighter.supportedLanguages; // $ExpectType string[]
 
     return (
-        <SyntaxHighlighter language="javascript" style={docco}>
+        <SyntaxHighlighter language="javascript" theme={docco}>
             {codeString}
         </SyntaxHighlighter>
     );
@@ -33,7 +33,7 @@ function hljsLightHighlighter(): JSX.Element {
     LightHighlighter.registerLanguage("javascript", javascript);
 
     return (
-        <LightHighlighter language="javascript" style={docco}>
+        <LightHighlighter language="javascript" theme={docco}>
             {codeString}
         </LightHighlighter>
     );
@@ -42,7 +42,7 @@ function hljsLightHighlighter(): JSX.Element {
 function prismHighlighter(): JSX.Element {
     PrismSyntaxHighlighter.supportedLanguages; // $ExpectType string[]
     return (
-        <PrismSyntaxHighlighter language="javascript" style={oneDark}>
+        <PrismSyntaxHighlighter language="javascript" theme={oneDark}>
             {codeString}
         </PrismSyntaxHighlighter>
     );
@@ -52,7 +52,7 @@ function primsLightHighlighter(): JSX.Element {
     PrismLightHighlighter.registerLanguage("jsx", jsx);
 
     return (
-        <PrismLightHighlighter language="jsx" style={oneLight}>
+        <PrismLightHighlighter language="jsx" theme={oneLight}>
             {codeString}
         </PrismLightHighlighter>
     );
@@ -115,14 +115,14 @@ const TestComponent: React.FC = () => <div>Hello world</div>;
 <PrismLightHighlighter language={{}}>{codeString}</PrismLightHighlighter>;
 
 // Test `style`
-<PrismLightHighlighter style={coldarkCold}>{codeString}</PrismLightHighlighter>;
-<PrismLightHighlighter style={coldarkDark}>{codeString}</PrismLightHighlighter>;
-<PrismLightHighlighter style={docco}>{codeString}</PrismLightHighlighter>;
-<PrismLightHighlighter style={oneDark}>{codeString}</PrismLightHighlighter>;
-<PrismLightHighlighter style={oneLight}>{codeString}</PrismLightHighlighter>;
-<PrismLightHighlighter style={{ keyword: { color: "red" } }}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={coldarkCold}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={coldarkDark}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={docco}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={oneDark}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={oneLight}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={{ keyword: { color: "red" } }}>{codeString}</PrismLightHighlighter>;
 // @ts-expect-error
-<PrismLightHighlighter style={{ color: "red" }}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter theme={{ color: "red" }}>{codeString}</PrismLightHighlighter>;
 
 // Test `children`
 <PrismLightHighlighter>{codeString}</PrismLightHighlighter>;
